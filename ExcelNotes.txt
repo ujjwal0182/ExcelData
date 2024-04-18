@@ -1,0 +1,107 @@
+*****Excel Notes*****
+
+1. Sum of a column
+=sum(d4:d7)
+=sumif(d4:d7,">50")
+Alt + =
+
+Question: Try adding another SUMIF formula here, but add amounts that are less than 100. The result should be 160.
+=sumif(G10:G14,"<100")
+
+
+2. Fill (drag and drop)
+=SUM(C4:D4)		(here this formula add the rows) and drag n drop
+=SUM(C11:C14)	(here this formula add the columns) and drag n drop
+
+we can use shortkey also ctrl+r (filling right), ctrl+d (filling down)
+
+3. Split
+write first name -> then write first name of next row -> then excel automatic fill all first name 
+select all columns and press CTRL + E (this is the shortkey for flash fill)
+
+4. Transpose
+Item	Bread	Donuts	Cookies	Cakes	Pies
+Amount	50		100		40		50		20
+
+a. select all this data -> press Ctrl+Alt+V (special paste) -> select Transpose option.
+b. select 6 rows of 2 column -> go to address bar -> write formula =TRANSPOSE(C33:H34) (this also called array formula) and press Ctrl+Shift+Enter. 
+
+5. Sort/Filter 
+By UI
+
+6. Tables
+a. select data -> Insert tab -> select Table.
+b. I have 3 column and want to sum then -> select all 3 column for 1 row and Alt+= and Enter
+c. If I want total -> select one cell -> on design tab -> check Total Row.
+
+
+7. Drop Down
+
+Food	Department
+Apples	
+Beef	
+Bananas	
+Lemons	
+Broccoli	
+Kale	
+Ham	
+Bread	
+Chicken	
+Cookies	
+Cakes	
+Pies	
+
+
+
+Department
+Produce
+Meat
+Bakery
+
+
+Ques: Now I want drop-down for table1 for food column, and the drop-down is based on Department table.
+a. 1st select all data data under department with header and press Ctrl + T 
+b. Now select all blank fields under Department column 
+
+
+8. How we can import data or bringing data into our excel from local machine.
+   There are multiple ways to import data.
+
+a. Go to Data tab -> Click on Existing Connections -> In show drop-down select -> this computer option -> Click on Browse for More... -> selct your csv file.
+
+b. Go to your git -> select csv file -> click on Raw (so that you have the final location) -> https://github.com/ajaykuma/Datasets_For_Work/blob/main/AirPassengers.csv -> https://raw.githubusercontent.com/ajaykuma/Datasets_For_Work/main/AirPassengers.csv (after click on RAW) -> Now go to Data tab in Excel and select From Web and paste RAW url. 
+
+Note: In 2016 verison there is no to select Text to Column option because all data is already format.
+
+c. 
+
+
+
+/********************************************Function***************************************/
+OrderDate	Region	Rep	Item	Units	Unit Cost	Revenue
+1/6/2019	East	Jones	Pencil	95	1.99	189.05
+44971	West	Smith	Pen	50	2.49	124.5
+44684	North	Brown	Notebook	30	4.99	149.7
+45524	South	Garcia	Marker	75	1.79	134.25
+45242	East	Johnson	Eraser	100	0.99	99
+44749	Central	Patel	Binder	40	3.29	131.6
+45007	East	Miller	Pencil	80	1.99	159.2
+44723	West	Davis	Pen	65	2.49	161.85
+45540	North	White	Notebook	45	4.99	224.55
+45278	South	Lee	Marker	90	1.79	161.1
+44780	Central	Clark	Eraser	55	0.99	54.45
+45046	East	Allen	Binder	70	3.29	230.3
+44848	West	Turner	Pencil	85	1.99	169.15
+45316	North	Harris	Pen	60	2.49	149.4
+45126	South	Martin	Notebook	55	4.99	274.45
+44873	Central	Scott	Marker	75	1.79	134.25
+				1070		2546.8
+
+
+Q. Find the total unit that were sold in the East region.
+=SUMIF(B2:B17,B2,E2:E17)
+
+or
+=SUMIF(D2:D17,"Pencil",G2:G17)
+
+
